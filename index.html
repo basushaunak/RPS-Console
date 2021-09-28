@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Rock Paper Scissors - Console version 1.0</title>
+    </head>
+    <body>
+        <script>
+            const rpsArray = ["rock", "paper", "scissors"];
+            function computerPlay(){
+                let randSelection = -1;
+                randSelection = parseInt(Math.random()*3);
+                return rpsArray[randSelection];
+            }
+            function userPlay(){
+                let invalidInput = true;
+                let userInput = "";
+                while(invalidInput){
+                    userInput = prompt("Enter rock, paper or scissors");
+                    userInput=userInput.toLocaleLowerCase();
+                    if(userInput==="rock" || userInput === "paper" || userInput === "scissors"){
+                        invalidInput = false;
+                    }else{
+                        alert("You must enter either ROCK or PAPER or SCISSORS");
+                    }
+                }
+                return userInput;
+            }
+        </script>
+    </body>
+</html>
