@@ -26,6 +26,42 @@
                 }
                 return userInput;
             }
+            function playOnce(userSelection, computerSelection){
+                userSelection = userSelection.toLocaleLowerCase();
+                computerSelection=computerSelection.toLocaleLowerCase();
+                let returnString = "";
+                if(userSelection === "rock"){
+                    if(computerSelection==="rock"){
+                        returnString="It's a Draw!";
+                    }else if(computerSelection==="paper"){
+                        returnString="You lose! Because paper covers rock";
+                    }else{
+                        returnString="You win! Because rock breaks scissors";
+                    }
+                }else if(userSelection==="paper"){
+                    if(computerSelection==="rock"){
+                        returnString="You win! Because paper covers rock";
+                    }else if(computerSelection==="paper"){
+                        returnString="It's a Draw!";
+                    }else{
+                        returnString="You lose! Because scissors cut paper";
+                    }
+                }else{
+                    if(computerSelection==="rock"){
+                        returnString="You lose! because paper covers rock";
+                    }else if(computerSelection==="paper"){
+                        returnString= "You win! Beccause scissors cut paper";
+                    }else{
+                        returnString="It's a Draw!";
+                    }
+                }
+                return returnString;
+            }
+            function rps(){
+                let userInput = userPlay();
+                let computerInput = computerPlay();
+                return playOnce(userInput, computerInput);
+            }
         </script>
     </body>
 </html>
